@@ -19,6 +19,9 @@ app.use(bodyParser.json());
 // Pretify JSON response
 app.set('json spaces', 2);
 
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+
 // Connecting to the database
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
